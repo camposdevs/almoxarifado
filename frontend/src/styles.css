@@ -1,0 +1,57 @@
+:root {
+  --cor-primaria: #0f766e; --cor-primaria-escura: #115e59; --cor-fundo: #f1f5f9; --cor-card: #fff;
+  --cor-texto: #0f172a; --cor-suave: #64748b; --cor-borda: #e2e8f0;
+  --cor-erro: #b91c1c; --cor-erro-fundo: #fee2e2; --cor-ok: #166534; --cor-ok-fundo: #dcfce7;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: var(--cor-fundo); color: var(--cor-texto); }
+h1, h2, h3 { margin: 0 0 .5rem; }
+h2 { font-size: 1.4rem; } h3 { font-size: 1.05rem; }
+
+.navbar { display: flex; align-items: center; gap: 1.5rem; padding: .75rem 1.5rem; background: var(--cor-primaria); color: #fff; flex-wrap: wrap; }
+.navbar nav { display: flex; gap: .25rem; flex: 1; }
+.navbar nav a { color: #ccfbf1; text-decoration: none; padding: .4rem .8rem; border-radius: 6px; }
+.navbar nav a.ativo, .navbar nav a:hover { background: var(--cor-primaria-escura); color: #fff; }
+.usuario { display: flex; align-items: center; gap: .6rem; font-size: .9rem; }
+.badge { background: #ccfbf1; color: var(--cor-primaria-escura); padding: .15rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.badge-admin { background: #fde68a; color: #78350f; }
+
+.container { max-width: 1040px; margin: 1.5rem auto; padding: 0 1rem; }
+.card { background: var(--cor-card); border: 1px solid var(--cor-borda); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.titulo-pagina { display: flex; justify-content: space-between; align-items: center; margin-bottom: .5rem; }
+.muted { color: var(--cor-suave); } .bloco { display: block; }
+
+label { display: flex; flex-direction: column; gap: .3rem; font-size: .85rem; font-weight: 600; }
+input, select { padding: .5rem .6rem; border: 1px solid #cbd5e1; border-radius: 6px; font: inherit; font-weight: 400; background: #fff; }
+input:focus, select:focus { outline: 2px solid var(--cor-primaria); outline-offset: 1px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem 1rem; }
+.form-grid > h3, .form-grid > .largo, .form-grid > .alerta { grid-column: 1 / -1; }
+.filtros { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1rem; align-items: end; }
+.acoes { display: flex; gap: .5rem; }
+
+.btn { background: var(--cor-primaria); color: #fff; border: 0; border-radius: 6px; padding: .5rem .95rem; font: inherit; font-weight: 600; cursor: pointer; }
+.btn:hover:not(:disabled) { background: var(--cor-primaria-escura); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-secundario { background: #e2e8f0; color: var(--cor-texto); } .btn-secundario:hover:not(:disabled) { background: #cbd5e1; }
+.btn-perigo { background: var(--cor-erro); } .btn-perigo:hover:not(:disabled) { background: #991b1b; }
+.link { background: none; border: 0; color: var(--cor-primaria); cursor: pointer; font: inherit; text-decoration: underline; }
+
+.alerta { padding: .65rem .9rem; border-radius: 8px; margin-bottom: .75rem; font-weight: 500; }
+.alerta-erro { background: var(--cor-erro-fundo); color: var(--cor-erro); border: 1px solid #fecaca; }
+.alerta-sucesso { background: var(--cor-ok-fundo); color: var(--cor-ok); border: 1px solid #bbf7d0; }
+
+.tabela-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--cor-borda); vertical-align: middle; }
+th { font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; color: var(--cor-suave); }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.zerado { color: var(--cor-erro); font-weight: 700; }
+td.acoes { display: flex; gap: .4rem; }
+.tag { padding: .12rem .5rem; border-radius: 4px; font-size: .78rem; font-weight: 700; }
+.tag-entrada { background: var(--cor-ok-fundo); color: var(--cor-ok); } .tag-saida { background: #ffedd5; color: #9a3412; }
+.paginacao { display: flex; justify-content: space-between; align-items: center; margin-top: .75rem; color: var(--cor-suave); font-size: .88rem; }
+.paginacao > div { display: flex; align-items: center; gap: .5rem; } .pagina-atual { min-width: 7.5rem; text-align: center; }
+
+.login-pagina { min-height: 100vh; display: grid; place-items: center; padding: 1rem; }
+.login-card { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: .8rem; }
+@media (max-width: 700px) { .form-grid, .filtros { grid-template-columns: 1fr; } }
